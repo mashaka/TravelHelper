@@ -43,6 +43,15 @@ extension TripTimelineVC {
                                                      longitude: c.1),
                               zoomLevel: 9,
                               animated: false)
+            
+            trip.events.forEach { event in
+                let c = event.coordinates
+                let annotation = MGLPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: c.0, longitude: c.1)
+                annotation.title = event.title
+                annotation.subtitle = event.detail
+                mapView.addAnnotation(annotation)
+            }
         }
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -50,14 +50,14 @@ enum Event {
     
     var detail: String {
         switch self {
-        case .flight:
-            return "Catch a flight from *airport name* to *airport name*\n" + place.generateAddress()
-        case .arrival:
-            return "Welcome to *city name*\n" + place.generateAddress()
-        case .hotel:
+        case .flight(let data):
+            return "Catch a flight from \(data.from) to \(data.to)\n" + place.generateAddress()
+        case .arrival(let data):
+            return "Welcome to \(data.to)\n" + place.generateAddress()
+        case .hotel(let data):
             return "Take a rest at *hotel name*\n" + place.generateAddress()
-        case .event:
-            return "Be a part of the amazing *event name*\n" + place.generateAddress()
+        case .event(let data):
+            return "Join the amazing \(data.performer)\n" + place.generateAddress()
         }
     }
     
@@ -86,6 +86,7 @@ enum Event {
         case "event":
             return .event(EventData(json: json))
         default:
+            print(json.debugDescription)
             fatalError("Wrong node_type")
         }
     }
@@ -93,17 +94,35 @@ enum Event {
 }
 
 struct FlightData {
+    var from: String
+    var to: String
+    var price: String
+    var carrier: String
     var place: Place
     
     init(json: JSON) {
+        self.from = json["from"].stringValue
+        self.to = json["to"].stringValue
+        self.price = json["price"].stringValue
+        self.price = json["price"].stringValue
+        self.carrier = json["carrier"].stringValue
         self.place = Place(json: json["place"])
     }
 }
 
 struct ArrivalData {
+    var from: String
+    var to: String
+    var price: String
+    var carrier: String
     var place: Place
     
     init(json: JSON) {
+        self.from = json["from"].stringValue
+        self.to = json["to"].stringValue
+        self.price = json["price"].stringValue
+        self.price = json["price"].stringValue
+        self.carrier = json["carrier"].stringValue
         self.place = Place(json: json["place"])
     }
 }
@@ -117,9 +136,11 @@ struct HotelData {
 }
 
 struct EventData {
+    var performer: String
     var place: Place
     
     init(json: JSON) {
+        self.performer = json["performer"].stringValue
         self.place = Place(json: json["place"])
     }
 }
