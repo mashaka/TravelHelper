@@ -10,6 +10,17 @@ import UIKit
 
 class LoginVC: UIViewController {
     
+    @IBOutlet weak var loginFacebook: UIButton!
     
+}
+
+// MARK: - Actions
+extension LoginVC {
+    
+    @IBAction func onLogin(_ sender: Any) {
+        
+        Auth.loginToFacebook()
+        
+    }
     
 }
