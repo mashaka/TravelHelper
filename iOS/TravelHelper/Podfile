@@ -12,6 +12,7 @@ target ‘TravelHelper’ do
     pod 'SnapKit'
     pod 'RxSwift', '~> 4.0.0-alpha.0'
     pod 'RxCocoa', '~> 4.0.0-alpha.0'
+    pod 'Mapbox-iOS-SDK', '~> 3.6'
 end
 
 post_install do |installer|  
