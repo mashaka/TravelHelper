@@ -8,21 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		11C98E6E1F92095400A1C3AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C98E6D1F92095400A1C3AD /* AppDelegate.swift */; };
-		11C98E701F92095400A1C3AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C98E6F1F92095400A1C3AD /* ViewController.swift */; };
 		11C98E731F92095400A1C3AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C98E711F92095400A1C3AD /* Main.storyboard */; };
 		11C98E751F92095400A1C3AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C98E741F92095400A1C3AD /* Assets.xcassets */; };
 		11C98E781F92095400A1C3AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C98E761F92095400A1C3AD /* LaunchScreen.storyboard */; };
+		11C98E891F92118600A1C3AD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C98E881F92118600A1C3AD /* LoginVC.swift */; };
 		B63FA57E750CB275B593C10F /* Pods_TravelHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1871703E19204F4BABFC9B2 /* Pods_TravelHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11C98E6A1F92095400A1C3AD /* TravelHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C98E6D1F92095400A1C3AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11C98E6F1F92095400A1C3AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11C98E721F92095400A1C3AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11C98E741F92095400A1C3AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11C98E771F92095400A1C3AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11C98E791F92095400A1C3AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C98E881F92118600A1C3AD /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		885853279C082D3A4C951CE5 /* Pods-TravelHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TravelHelper/Pods-TravelHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		A154026D0EEC119E1F80D74A /* Pods-TravelHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TravelHelper/Pods-TravelHelper.release.xcconfig"; sourceTree = "<group>"; };
 		F1871703E19204F4BABFC9B2 /* Pods_TravelHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,15 +61,48 @@
 		11C98E6C1F92095400A1C3AD /* TravelHelper */ = {
 			isa = PBXGroup;
 			children = (
-				11C98E6D1F92095400A1C3AD /* AppDelegate.swift */,
-				11C98E6F1F92095400A1C3AD /* ViewController.swift */,
-				11C98E711F92095400A1C3AD /* Main.storyboard */,
-				11C98E741F92095400A1C3AD /* Assets.xcassets */,
-				11C98E761F92095400A1C3AD /* LaunchScreen.storyboard */,
-				11C98E791F92095400A1C3AD /* Info.plist */,
+				11C98E811F920B6800A1C3AD /* AppDelegate */,
+				11C98E7F1F920B3E00A1C3AD /* UI */,
+				11C98E871F92118600A1C3AD /* Controllers */,
+				11C98E801F920B4D00A1C3AD /* Resources */,
 			);
 			path = TravelHelper;
 			sourceTree = "<group>";
+		};
+		11C98E7F1F920B3E00A1C3AD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				11C98E711F92095400A1C3AD /* Main.storyboard */,
+				11C98E761F92095400A1C3AD /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		11C98E801F920B4D00A1C3AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11C98E741F92095400A1C3AD /* Assets.xcassets */,
+				11C98E791F92095400A1C3AD /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11C98E811F920B6800A1C3AD /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				11C98E6D1F92095400A1C3AD /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		11C98E871F92118600A1C3AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11C98E881F92118600A1C3AD /* LoginVC.swift */,
+			);
+			name = Controllers;
+			path = TravelHelper/Controllers;
+			sourceTree = SOURCE_ROOT;
 		};
 		670D7331DB5D14B5F7C038F9 /* Pods */ = {
 			isa = PBXGroup;
@@ -231,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C98E701F92095400A1C3AD /* ViewController.swift in Sources */,
+				11C98E891F92118600A1C3AD /* LoginVC.swift in Sources */,
 				11C98E6E1F92095400A1C3AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBBK9UCLZS;
-				INFOPLIST_FILE = TravelHelper/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TravelHelper/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adanilyak.TravelHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XBBK9UCLZS;
-				INFOPLIST_FILE = TravelHelper/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TravelHelper/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adanilyak.TravelHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
