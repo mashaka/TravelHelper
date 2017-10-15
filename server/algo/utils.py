@@ -3,6 +3,7 @@ Copyright 2017, MachineHeads
 Author: Maria Sandrikova
 Description: Utils
 """
+from geopy.distance import great_circle
 
 def flatten_music_events(music_events):
     """
@@ -54,13 +55,25 @@ def flatten_music_events(music_events):
     """
     events = []
     for band_info in music_events:
-        for band_event in band_info['events']:
-            events.append(dict(
-                {
-                    'performer': band_info['name'],
-                    'type': 'music',
-                    'cover_url': band_info['cover_url'] if 'cover_url' in band_info else None
-                },
-                **band_event
-            ))
+        if 'events' in band_info:
+            for band_event in band_info['events']:
+                events.append(dict(
+                    {
+                        'performer': band_info['name'],
+                        'type': 'music',
+                        'cover_url': band_info['cover_url'] if 'cover_url' in band_info else None
+                    },
+                    **band_event
+                ))
     return events
+
+def calc_distance(trip_a, trip_b):
+    """ Calculate distance between two locations """
+    coords_1 = get_coordinates(trip_a)
+    coords_2 = get_coordinates(trip_b)
+    return great_circle(coords_1, coords_2).km
+
+
+def get_coordinates(trip):
+    """ Return trip coordinates """
+    return trip["locations"][0]["place"]["location"]["latitude"], trip["locations"][0]["place"]["location"]["longitude"]
