@@ -136,7 +136,7 @@ def is_concatenatable(trip_a, trip_b):
     trip_b_start = parser.parse(trip_b["locations"][0]["start_date"]).date()
     if (trip_b_start - trip_a_end).days > config.MAX_GAP_BETWEEN_TRIPS:
         return False
-    if (trip_b_start - trip_a_end).days <= 0:
+    if (trip_b_start - trip_a_end).days < 0:
         return False
     if trip_a["locations"][0]["events"][0]["performer"] == trip_a["locations"][0]["events"][0]["performer"]:
         return False
