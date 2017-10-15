@@ -128,6 +128,7 @@ COVERS = {
     'ireland': 'http://www.nationalgeographic.com/content/dam/travel/photos/000/060/6017.adapt.1900.1.jpg',
     'brazil': 'http://www.nationalgeographic.com/content/dam/travel/photos/000/066/6647.adapt.1900.1.jpg',
     'emirates': 'https://inassets1-internationsgmbh.netdna-ssl.com/image/static_2048_1152/static/bundles/internationsseo/frontend/images/countryHeroV2/uae.jpg',
+    'colombia': 'http://www.cano-cristales.com/wp-content/uploads/2013/07/Cano-Cristales-sector-Los-Ochos-Colombia.jpg',
 }
 
 
