@@ -14,6 +14,7 @@ class TripEventCell: UICollectionViewCell {
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var detail: UILabel!
+    @IBOutlet weak var price: UILabel!
     
 }
 
@@ -22,6 +23,15 @@ extension TripEventCell {
     func set(event: Event) {
         title.text = event.title
         detail.text = event.detail
+        
+        switch event {
+        case .flight(let data):
+            price.text = data.price
+            price.isHidden = false
+        default:
+            price.isHidden = true
+            break
+        }
     }
     
     override func awakeFromNib() {
@@ -32,6 +42,9 @@ extension TripEventCell {
         
         detail.font = UIHelper.defaultFont(of: 16, weight: .regular)
         detail.textColor = UIHelper.text
+        
+        price.font = UIHelper.defaultFont(of: 16, weight: .regular)
+        price.textColor = UIHelper.tint
         
         container.layer.cornerRadius = 13.0
         container.layer.borderWidth = 0.5

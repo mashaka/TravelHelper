@@ -20,6 +20,11 @@ class TripTimelineVC: UIViewController {
     
     @IBOutlet weak var eventsCollection: UICollectionView!
     
+    @IBAction func onNav(_ sender: Any) {
+        let vc = ARnavigationVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension TripTimelineVC {
@@ -98,6 +103,31 @@ extension TripTimelineVC: UICollectionViewDelegate, UICollectionViewDataSource, 
                                                  longitude: c.1),
                           zoomLevel: 9,
                           animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch trip.events[indexPath.row] {
+        case .flight(let data):
+            if let url = data.ticket {
+                UIApplication.shared.open(url,
+                                          options: [:],
+                                          completionHandler: nil)
+            }
+        case .hotel(let data):
+            if let url = data.ticket {
+                UIApplication.shared.open(url,
+                                          options: [:],
+                                          completionHandler: nil)
+            }
+        case .event(let data):
+            if let url = data.ticket {
+                UIApplication.shared.open(url,
+                                          options: [:],
+                                          completionHandler: nil)
+            }
+        default:
+            break
+        }
     }
     
 }

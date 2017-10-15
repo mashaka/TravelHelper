@@ -55,7 +55,7 @@ enum Event {
         case .arrival(let data):
             return "Welcome to \(data.to)\n" + place.generateAddress()
         case .hotel(let data):
-            return "Take a rest at *hotel name*\n" + place.generateAddress()
+            return "Take a rest at \(data.name)\n" + place.generateAddress()
         case .event(let data):
             return "Join the amazing \(data.performer)\n" + place.generateAddress()
         }
@@ -97,6 +97,7 @@ struct FlightData {
     var from: String
     var to: String
     var price: String
+    var ticket: URL?
     var carrier: String
     var place: Place
     
@@ -104,7 +105,7 @@ struct FlightData {
         self.from = json["from"].stringValue
         self.to = json["to"].stringValue
         self.price = json["price"].stringValue
-        self.price = json["price"].stringValue
+        self.ticket = json["ticket_uri"].url
         self.carrier = json["carrier"].stringValue
         self.place = Place(json: json["place"])
     }
@@ -121,26 +122,33 @@ struct ArrivalData {
         self.from = json["from"].stringValue
         self.to = json["to"].stringValue
         self.price = json["price"].stringValue
-        self.price = json["price"].stringValue
         self.carrier = json["carrier"].stringValue
         self.place = Place(json: json["place"])
     }
 }
 
 struct HotelData {
+    var name: String
+    var price: String
+    var ticket: URL?
     var place: Place
     
     init(json: JSON) {
+        self.name = json["name"].stringValue
         self.place = Place(json: json["place"])
+        self.ticket = json["ticket_uri"].url
+        self.price = json["price"].stringValue
     }
 }
 
 struct EventData {
     var performer: String
+    var ticket: URL?
     var place: Place
     
     init(json: JSON) {
         self.performer = json["performer"].stringValue
+        self.ticket = json["ticket_uri"].url
         self.place = Place(json: json["place"])
     }
 }

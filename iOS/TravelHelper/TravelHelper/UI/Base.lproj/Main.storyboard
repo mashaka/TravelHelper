@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
@@ -17,9 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Lgk-I4-mpI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-Tx-yyy">
-                                <rect key="frame" x="154" y="350.5" width="67" height="30"/>
-                                <state key="normal" title="Facebook"/>
+                                <rect key="frame" x="117.5" y="345" width="140" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="dfx-Cv-vcx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="24"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" red="0.16673648360000001" green="0.30936869979999998" blue="0.65980440380000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="he7-sw-hJ2"/>
                                 </connections>
@@ -27,8 +47,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Lgk-I4-mpI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UUY-Io-t5H"/>
                             <constraint firstItem="YeI-Tx-yyy" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="d0D-Ab-ZSp"/>
+                            <constraint firstItem="Lgk-I4-mpI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lV8-id-bug"/>
                             <constraint firstItem="YeI-Tx-yyy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lXI-Ay-HiF"/>
+                            <constraint firstItem="Lgk-I4-mpI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="naq-VF-Xdo"/>
+                            <constraint firstItem="Lgk-I4-mpI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oil-6i-c6Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="34"/>
+            <point key="canvasLocation" x="312.80000000000001" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vvl-WZ-wC3">
@@ -101,6 +125,12 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdS-h2-xiI">
+                                                            <rect key="frame" x="16" y="116" width="37.5" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -109,7 +139,9 @@
                                                         <constraint firstItem="FdB-TZ-R4S" firstAttribute="leading" secondItem="2oN-VS-OZM" secondAttribute="leading" constant="16" id="eMu-E0-F8n"/>
                                                         <constraint firstItem="FdB-TZ-R4S" firstAttribute="top" secondItem="2oN-VS-OZM" secondAttribute="top" constant="16" id="lw6-ua-bcz"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C42-yK-0v8" secondAttribute="trailing" constant="16" id="ps7-bQ-3Ud"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vdS-h2-xiI" secondAttribute="bottom" constant="16" id="uhv-pI-zB2"/>
                                                         <constraint firstItem="C42-yK-0v8" firstAttribute="top" secondItem="FdB-TZ-R4S" secondAttribute="bottom" constant="4" id="vYb-S7-O9p"/>
+                                                        <constraint firstItem="vdS-h2-xiI" firstAttribute="leading" secondItem="2oN-VS-OZM" secondAttribute="leading" constant="16" id="xND-3s-c7E"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -124,6 +156,7 @@
                                         <connections>
                                             <outlet property="container" destination="2oN-VS-OZM" id="cjC-80-ex3"/>
                                             <outlet property="detail" destination="C42-yK-0v8" id="I5j-Kx-wvl"/>
+                                            <outlet property="price" destination="vdS-h2-xiI" id="Lyy-tS-W71"/>
                                             <outlet property="title" destination="FdB-TZ-R4S" id="BI0-y7-Iob"/>
                                         </connections>
                                     </collectionViewCell>
@@ -216,4 +249,7 @@
             <point key="canvasLocation" x="-496" y="845.57721139430294"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="1141" height="760"/>
+    </resources>
 </document>
