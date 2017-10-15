@@ -18,6 +18,7 @@
 		11C98E911F92139D00A1C3AD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C98E901F92139D00A1C3AD /* Router.swift */; };
 		11C98E951F92166D00A1C3AD /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C98E941F92166D00A1C3AD /* UIHelper.swift */; };
 		11D643B61F9296E90078B740 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D643B51F9296E90078B740 /* UIImageViewExtension.swift */; };
+		11D643BA1F92CD340078B740 /* ARNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D643B91F92CD340078B740 /* ARNavigationVC.swift */; };
 		11D7F63E1F92496A000C3046 /* TripListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7F63D1F92496A000C3046 /* TripListVC.swift */; };
 		11D7F6401F924A25000C3046 /* TripPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7F63F1F924A25000C3046 /* TripPreviewCell.swift */; };
 		11D7F6541F925654000C3046 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11D7F6421F925653000C3046 /* Lato-HeavyItalic.ttf */; };
@@ -59,6 +60,7 @@
 		11C98E901F92139D00A1C3AD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		11C98E941F92166D00A1C3AD /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		11D643B51F9296E90078B740 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		11D643B91F92CD340078B740 /* ARNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNavigationVC.swift; sourceTree = "<group>"; };
 		11D7F63D1F92496A000C3046 /* TripListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListVC.swift; sourceTree = "<group>"; };
 		11D7F63F1F924A25000C3046 /* TripPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPreviewCell.swift; sourceTree = "<group>"; };
 		11D7F6421F925653000C3046 /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				116291E21F92472F00769742 /* TripTimelineVC.swift */,
 				11C98E881F92118600A1C3AD /* LoginVC.swift */,
 				11D7F63D1F92496A000C3046 /* TripListVC.swift */,
+				11D643B91F92CD340078B740 /* ARNavigationVC.swift */,
 			);
 			name = Controllers;
 			path = TravelHelper/Controllers;
@@ -340,6 +343,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TravelHelper/Pods-TravelHelper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCL/ARCL.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -353,6 +357,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -422,6 +427,7 @@
 				11C98E8F1F92135300A1C3AD /* Auth.swift in Sources */,
 				11C98E951F92166D00A1C3AD /* UIHelper.swift in Sources */,
 				11D7F63E1F92496A000C3046 /* TripListVC.swift in Sources */,
+				11D643BA1F92CD340078B740 /* ARNavigationVC.swift in Sources */,
 				11D7F66E1F9275A3000C3046 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
