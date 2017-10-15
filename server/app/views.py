@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .methods import run_user_loading
+from rest_framework import status
+
 
 @api_view(['GET', 'POST'])
 def update(request):
@@ -11,4 +13,7 @@ def update(request):
 
 @api_view(['GET', 'POST'])
 def trips(request):
-    return Response(request.user.profile.data)
+    data = request.user.profile.data
+    if data is None:
+        return Response(status=status.HTTP_402_PAYMENT_REQUIRED)
+    return Response(data)

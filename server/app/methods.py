@@ -3,6 +3,7 @@ from django_q.tasks import async
 import pickle
 import facebook
 from app.algo import process
+import time
 
 User = get_user_model()
 
@@ -32,14 +33,14 @@ def remove_paging(d):
 def get_music_info(fb):
     return remove_paging(fb.get_object(
         'me/music',
-        fields='name,genre,cover,events{place,name,start_time,end_time}',
+        fields='name,genre,cover,events{place,name,start_time,end_time,ticket_uri}',
         limit=1000))
 
 
 def get_base_info(fb):
     return remove_paging(fb.get_object(
         'me',
-        fields='tagged_places.limit(100),posts.limit(1000){place,message,story},hometown,languages'))
+        fields='tagged_places.limit(100),posts.limit(1000){place,message,story},hometown{name,location},languages'))
 
 
 def load_user_data(user_id):
@@ -56,6 +57,7 @@ def load_user_data(user_id):
 
 def run_user_loading(user):
     async(load_user_data, user.id)
+
 
 def prepare_user(user):
     profile, created = Profile.objects.get_or_create(user=user)
