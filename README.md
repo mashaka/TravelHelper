@@ -1,5 +1,7 @@
 # TravelHelper
 
+![alt text](http://s019.radikal.ru/i644/1710/0a/6bf3f728c8f4.png)
+
 Travel Helper is an iOS app that analyses your interests on Facebook and creates trips right for you. Do you love Maroon 5? Nice, TripScanner creates a trip to visit Maroon 5's concert.
 
 This project is a part of [HackUPC 2017 Fall hackathon](https://hackupc2017f.devpost.com/) and is a [winner](https://devpost.com/software/tripscanner) in the Skyscanner challenge.
