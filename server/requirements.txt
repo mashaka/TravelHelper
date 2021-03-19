@@ -9,7 +9,7 @@ Django==1.11.6
 django-picklefield==1.0.0
 django-q==0.8.1
 django-rest-swagger==2.1.2
-djangorestframework==3.7.0
+djangorestframework==3.11.2
 facebook-sdk==2.0.0
 idna==2.6
 itypes==1.1.0
